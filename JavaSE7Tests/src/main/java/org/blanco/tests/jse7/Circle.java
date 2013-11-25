@@ -7,29 +7,22 @@ import java.beans.PropertyChangeSupport;
  *
  * @author Alexandro Blanco <ti3r.bubblenet@gmail.com>
  */
-public class Circle {
+public class Circle extends Shape{
     
-    private long id;
-    private Double radious;
+     private Double radious;
     private final PropertyChangeSupport propertyChangeSupport = new PropertyChangeSupport(this);
-    
-    
-    public static void main(String[] args) throws InterruptedException{
-	long millis = System.currentTimeMillis();
-	Thread.sleep(3000);
-	System.out.println(String.format("BackgroundTasksProcessor end in : %.4f m",
-		((System.currentTimeMillis()-millis)/60000.0)));
-    }
-    
     
     public Circle(double radious) {
 	this.radious = radious;
     }
 
+    Circle() {
+    }
+
     @Override
     public int hashCode() {
 	int hash = 7;
-	return (int) (hash + id + radious.hashCode());
+	return (int) (hash + getId() + radious.hashCode());
     }
 
     @Override
@@ -41,18 +34,15 @@ public class Circle {
 	    return false;
 	}
 	final Circle other = (Circle) obj;
-	if (this.id != other.id) {
+	if (this.getId() != other.getId()) {
 	    return false;
 	}
 	return Double.doubleToLongBits(this.radious) == Double.doubleToLongBits(other.radious);
     }
 
-    public long getId() {
-	return id;
-    }
-
-    public void setId(long id) {
-	this.id = id;
+    @Override
+    public String toString() {
+	return "Circle{" + "id=" + getId() + ", radious=" + radious + '}';
     }
     
     public Double getRadious() {
@@ -69,6 +59,18 @@ public class Circle {
     }
     public void removePropertyChangeListener(PropertyChangeListener listener){
 	propertyChangeSupport.removePropertyChangeListener(listener);
+    }
+
+    //Covariant Returns
+    @Override
+    public Circle initShape(Object... properties) {
+	if (properties.length != 2 || !(properties[0] instanceof Long)
+		|| !(properties[1] instanceof Double)){
+	    throw new IllegalArgumentException("Unable to Build Circle Shape. Parameters not valid");
+	}
+	this.radious = ((double) properties[1]);
+	this.setId((long) properties[0]);
+	return this;
     }
     
 }
