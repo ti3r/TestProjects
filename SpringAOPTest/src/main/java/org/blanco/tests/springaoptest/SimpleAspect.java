@@ -6,6 +6,7 @@
 
 package org.blanco.tests.springaoptest;
 
+import org.aspectj.lang.annotation.AfterReturning;
 import org.aspectj.lang.annotation.Aspect;
 import org.aspectj.lang.annotation.Pointcut;
 
@@ -25,6 +26,11 @@ public class SimpleAspect {
 	step1();
 	step2();
 	step3();
+    }
+    
+    @AfterReturning("org.blanco.test.springaoptest.SimpleAspect.transaction3Steps()")
+    public void afterTransaction(){
+	System.out.println("Transaction 3 steps endded");
     }
     
     public void step1(){

@@ -11,5 +11,6 @@
   <modules>
       <module>JavaSE7Tests</module>
     <module>SpringAOPTest</module>
+    <module>webfileupload</module>
   </modules>
 </project>
