@@ -10,7 +10,7 @@ import org.aspectj.lang.annotation.Before;
 
 /**
  *
- * @author asantana
+ * @author Alexandro Blanco <ti3r.bubblenet@gmail.com>
  */
 public class SimpleAdvaiceContainer {
     

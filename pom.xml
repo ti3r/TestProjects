@@ -12,5 +12,9 @@
       <module>JavaSE7Tests</module>
     <module>SpringAOPTest</module>
     <module>webfileupload</module>
+    <module>spring-test-framework</module>
+    <module>encrypt-tests</module>
+    <module>java8</module>
+    <module>scriptEngineTest-JSR223</module>
   </modules>
 </project>
