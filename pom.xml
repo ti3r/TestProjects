@@ -17,5 +17,6 @@
     <module>java8</module>
     <module>scriptEngineTest-JSR223</module>
     <module>GuakamoleEngine</module>
+    <module>ServiceLoaderExample</module>
   </modules>
 </project>

@@ -1,2 +1,5 @@
 target/
 /Gradle-Tests/Gradle-Test-Parent/.nb-gradle/profiles/private/
+/ServiceLocatorPatternExample/.nb-gradle/private/
+/ServiceLocatorPatternExample/.nb-gradle/profiles/private/
+/ServiceLocatorPatternExample/ServiceCore/build/

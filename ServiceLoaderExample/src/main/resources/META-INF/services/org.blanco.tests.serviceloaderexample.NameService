@@ -1,0 +1,3 @@
+org.blanco.tests.serviceloaderexample.WorldNameService #Name service
+#Comment or uncomment the desired name provider
+#org.blanco.tests.serviceloaderexample.AlexNameService #Name service
